@@ -120,6 +120,9 @@ ALTER TABLE public.star OWNER TO freecodecamp;
 -- Data for Name: black_hole; Type: TABLE DATA; Schema: public; Owner: freecodecamp
 --
 
+INSERT INTO public.black_hole VALUES (1, NULL, 100000);
+INSERT INTO public.black_hole VALUES (2, NULL, 20010000);
+INSERT INTO public.black_hole VALUES (3, NULL, 13022000);
 
 
 --
@@ -138,12 +141,44 @@ INSERT INTO public.galaxy VALUES (6, 'galaxy6', 600, true, NULL);
 -- Data for Name: moon; Type: TABLE DATA; Schema: public; Owner: freecodecamp
 --
 
+INSERT INTO public.moon VALUES (1, NULL, NULL, NULL, 1);
+INSERT INTO public.moon VALUES (2, NULL, NULL, NULL, 1);
+INSERT INTO public.moon VALUES (3, NULL, NULL, NULL, 1);
+INSERT INTO public.moon VALUES (4, NULL, NULL, NULL, 1);
+INSERT INTO public.moon VALUES (5, NULL, NULL, NULL, 2);
+INSERT INTO public.moon VALUES (6, NULL, NULL, NULL, 3);
+INSERT INTO public.moon VALUES (7, NULL, NULL, NULL, 2);
+INSERT INTO public.moon VALUES (8, NULL, NULL, NULL, 2);
+INSERT INTO public.moon VALUES (9, NULL, NULL, NULL, 6);
+INSERT INTO public.moon VALUES (10, NULL, NULL, NULL, 5);
+INSERT INTO public.moon VALUES (11, NULL, NULL, NULL, 5);
+INSERT INTO public.moon VALUES (12, NULL, NULL, NULL, 5);
+INSERT INTO public.moon VALUES (13, NULL, NULL, NULL, 6);
+INSERT INTO public.moon VALUES (14, NULL, NULL, NULL, 7);
+INSERT INTO public.moon VALUES (15, NULL, NULL, NULL, 8);
+INSERT INTO public.moon VALUES (16, NULL, NULL, NULL, 9);
+INSERT INTO public.moon VALUES (17, NULL, NULL, NULL, 4);
+INSERT INTO public.moon VALUES (18, NULL, NULL, NULL, 10);
+INSERT INTO public.moon VALUES (19, NULL, NULL, NULL, 11);
+INSERT INTO public.moon VALUES (20, NULL, NULL, NULL, 12);
 
 
 --
 -- Data for Name: planet; Type: TABLE DATA; Schema: public; Owner: freecodecamp
 --
 
+INSERT INTO public.planet VALUES (1, NULL, NULL, NULL, 1);
+INSERT INTO public.planet VALUES (2, NULL, NULL, NULL, 1);
+INSERT INTO public.planet VALUES (3, NULL, NULL, NULL, 1);
+INSERT INTO public.planet VALUES (4, NULL, NULL, NULL, 1);
+INSERT INTO public.planet VALUES (5, NULL, NULL, NULL, 2);
+INSERT INTO public.planet VALUES (6, NULL, NULL, NULL, 3);
+INSERT INTO public.planet VALUES (7, NULL, NULL, NULL, 2);
+INSERT INTO public.planet VALUES (8, NULL, NULL, NULL, 2);
+INSERT INTO public.planet VALUES (9, NULL, NULL, NULL, 6);
+INSERT INTO public.planet VALUES (10, NULL, NULL, NULL, 5);
+INSERT INTO public.planet VALUES (11, NULL, NULL, NULL, 5);
+INSERT INTO public.planet VALUES (12, NULL, NULL, NULL, 5);
 
 
 --
@@ -183,14 +218,6 @@ ALTER TABLE ONLY public.moon
 
 
 --
--- Name: moon moon_planet_id_key; Type: CONSTRAINT; Schema: public; Owner: freecodecamp
---
-
-ALTER TABLE ONLY public.moon
-    ADD CONSTRAINT moon_planet_id_key UNIQUE (planet_id);
-
-
---
 -- Name: planet planet_pkey; Type: CONSTRAINT; Schema: public; Owner: freecodecamp
 --
 
@@ -220,6 +247,14 @@ ALTER TABLE ONLY public.star
 
 ALTER TABLE ONLY public.star
     ADD CONSTRAINT star_pkey PRIMARY KEY (star_id);
+
+
+--
+-- Name: moon unique_distance; Type: CONSTRAINT; Schema: public; Owner: freecodecamp
+--
+
+ALTER TABLE ONLY public.moon
+    ADD CONSTRAINT unique_distance UNIQUE (distance_earth_km);
 
 
 --
